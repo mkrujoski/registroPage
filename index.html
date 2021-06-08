@@ -190,6 +190,23 @@
                     }
                 return true;
             }
+
+            function validacion9(texto) {
+                var alfanumerico="aAbBcCdDeEfFgGhHiIjJkKlLmMnNñÑoOpPqQrRsStTuUvVwWxXyYzZ0123456789 ";
+                if(texto.length > 0) {
+                    for(i=0; i<texto.length; i++) {
+                        if (alfanumerico.indexOf(texto.charAt(i),0) == -1) {
+                            return false;
+                        }
+                    }
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+
+
              //-----------------------------------------------------------------------------------------------
              function validaRegistro() {
                  var errores = 0;
@@ -245,6 +262,12 @@
                      alert("contraseña invalido");
                      errores++;
                  }
+
+                 if(!validacion9(document.getElementById("6").value)){
+                    alert("prestador invalido");
+                    errores++;
+                 }
+                 
                  if(errores == 0){
                      alert("REGISTRO EXITOSO!!!");
                  }
